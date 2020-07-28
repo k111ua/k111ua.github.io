@@ -1,0 +1,102 @@
+.grid-page{
+    background-image: url(../images/grid-bgp.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    .grid-group{
+        position: absolute;
+        top: 120px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        .float-clear();
+    }
+    .grid-1,.grid-2,.grid-3,.grid-4{
+        border-bottom: 1px solid rgba(255,255,255,.4);
+        border-top: 1px solid rgba(255,255,255,.4);
+    }
+    .grid{
+        height: 50%;
+        float: left;
+        border-left: 1px solid rgba(255,255,255,.4);
+        background: rgba(24,111,199,0.3);
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        padding-top: 56px;
+        transition: background .2s ease,padding .2s ease,opacity .2s ease,transform .3s ease;
+        transform: translate(-100%,100%);
+        opacity: 0;
+        &.enter{
+            transform: translate(0,0);
+            opacity: 1;
+        }
+        &:nth-child(4n+1){
+            border-left: none;
+        }
+        .icon{
+            width: 32px;
+            height: 32px;
+            opacity:.6;
+        }
+        .title{
+            font-size: 20px;
+            font-weight: bolder;
+            color: #fff;
+            line-height: 32px;
+            margin-top: 20px;
+        }
+        .intro{
+            opacity: 0.6;
+            margin-top: 20px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #FFF;
+            width: 320px;
+        }
+        .goto{
+            width: 32px;
+            height: 32px;
+            margin-top: 24px;
+            background: url(../images/goto.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: all .2s;
+        }
+        &:hover{
+            background: rgba(24,111,199,0.70);
+            padding-top: 0;
+            .goto{
+                opacity: 1;
+            }
+        }
+    }
+}
+@media all and (min-width: 1000px) and (max-width: 1599px) {
+    .grid-page{
+        .grid-group{
+            top: 96px;
+        }
+        .grid{
+            padding-top: 56px;
+            .intro{
+                width: 268px;
+                margin-top: 10px;
+            }
+            .icon{
+                width: 32px;
+                height: 32px;
+            }
+            .title{
+                font-size: 18px;
+                line-height: 32px;
+                margin-top: 10px;
+            }
+        }
+    }
+}

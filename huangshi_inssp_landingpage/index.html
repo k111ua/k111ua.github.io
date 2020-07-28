@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>黄石信息与标准化服务平台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <script src="js/jquery-3.4.0.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="style/swiper.min.css">
+    <link rel="stylesheet" href="style/main.css">
+    <script>
+        $(document).ready(function () {
+            $(".card-group .card").hover(function () {
+                $(".card-group .card").removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+    </script>
+    <!-- Demo styles -->
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #fff;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .slide-view {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .swiper-slide {
+            overflow: hidden;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body style="overflow: hidden;">
+    <div class="search-view">
+        <div class="close" onclick="exitSearch()">
+            <img src="./images/close.png">
+        </div>
+        <div class="search">
+            <img src="./images/search-light.png">
+        </div>
+        <input type="text" class="search-bar" placeholder="输入关键词">
+    </div>
+    <div class="keynote slide-view swiper-no-swiping">
+        <div class="toolbox down">
+            <div class="to-top" onclick="toTop()"></div>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+        <div class="top-bar light row">
+            <a href="" class="title">
+                <img src="images/light-title.png" class="light-title">
+                <img src="images/blue-title.png" class="dark-title">
+            </a>
+            <div class="nav-bar">
+                <a href="" class="nav-item current">首页</a>
+                <a href="" class="nav-item">工作与服务</a>
+                <a href="" class="nav-item">资源</a>
+                <a href="" class="nav-item">关于我们</a>
+                <div class="search" onclick="search()"></div>
+                <div class="divider"></div>
+                <a href="" class="link">登录</a>
+                <a href="" class="link">注册</a>
+            </div>
+        </div>
+        <div class="swiper-wrapper swiper-no-swiping">
+            <div class="swiper-slide hero-banner-slide swiper-no-swiping">
+                <div class="prev"></div>
+                <div class="next"></div>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide banner-1">
+                        <div class="main motion-1">提供<span class="roboto-black">&nbsp;1000000+&nbsp;</span>馆藏标准随时为您服务</div>
+                        <div class="sub motion-2">标准资源分为国家标准、行业标准、地方标准、国际国外标准、黄石市级地方标准、团体（联盟）标准库</div>
+                        <div class="action-bar motion-3">
+                            <div class="button">我要查询</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide banner-2">
+                        <div class="main motion-1">为企业提供标准制修订、咨询、培训等个性化定制服务</div>
+                        <div class="action-bar motion-2">
+                            <div class="button">我要服务</div>
+                            <div class="button">视频案例</div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide banner-3">
+                        <div class="sub expand motion-1">打造<span class="roboto-light">&nbsp;2025&nbsp;</span>黄石第一支柱产业</div>
+                        <div class="max motion-2">“中部硅谷”&nbsp;志在必得&nbsp;&nbsp;&nbsp;</div>
+                        <div class="sub motion-3">实力最强、产能规模最大、集聚程度最高</div>
+                    </div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper-slide service">
+                <div class="slide-title">
+                    <div class="main">服务</div>
+                    <div class="sub">Services</div>
+                </div>
+                <div class="card-group">
+                    <div class="card active card-1">
+                        <div class="icon"><img src="./images/online.png" alt=""></div>
+                        <div class="title">标准在线服务</div>
+                        <div class="intro">针对社会或会员用户，可在线提出相应的业务诉求，我单位会第一时间进行在线处理</div>
+                        <div class="go-expand"></div>
+                        <div class="link-group">
+                            <a class="link">标准自我声明</a>
+                            <a class="link">标准时效性确认</a>
+                            <a class="link">标准代译</a>
+                            <a class="link">WTOTBT咨询</a>
+                            <a class="link">标准制修订奖励申报</a>
+                            <a class="link">市级地方标准申报</a>
+                        </div>
+                    </div>
+                    <div class="card card-2">
+                        <div class="icon"><img src="./images/program.png" alt=""></div>
+                        <div class="title">标准化项目服务</div>
+                        <div class="intro">提供在标准化项目上，提供的相关服务对应的业务办理流程、业务框架、申报需要的材料、每类业务对应的联系方式等介绍</div>
+                        <div class="go-expand"></div>
+                        <div class="link-group">
+                            <a class="link">标准化良好行为</a>
+                            <a class="link">服务业标准化</a>
+                            <a class="link">农业标准化</a>
+                            <a class="link">地理标志产品</a>
+                            <a class="link">标准化专题</a>
+                            <a class="link">标准制修订</a>
+                        </div>
+                    </div>
+                    <div class="card card-3">
+                        <div class="icon"><img src="./images/code.png" alt=""></div>
+                        <div class="title">条码服务</div>
+                        <div class="intro">提供在条码各业务办理上的深度疑问咨询和解答</div>
+                        <div class="go-expand"></div>
+                        <div class="link-group">
+                            <a class="link">条码注册</a>
+                            <a class="link">条码续展</a>
+                            <a class="link">产品管理</a>
+                            <a class="link">条码制作</a>
+                            <a class="link">条码检测</a>
+                            <a class="link">印刷认证</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide grid-page">
+                <div class="grid-group">
+                    <a href="" class="grid grid-1">
+                        <img src="./images/standard.png" class="icon">
+                        <div class="title">标准检索</div>
+                        <div class="intro">提供1000000+馆藏标准随时为您服务，标准资源分为国家标准、行业标准、地方标准、国际国外标准、黄石市级地方标准、团体（联盟）标准库</div>
+                        <div class="goto"></div>
+                    </a>
+                    <a href="" class="grid grid-2">
+                        <img src="./images/uscc.png" class="icon">
+                        <div class="title">统一社会信用代码检索</div>
+                        <div class="intro">提供全市200000+的机构信息随时为您服务，其中数据来源分布为机构编制、民政、工会、宗教、司法行政、工商、其他</div>
+                        <div class="goto"></div>
+                    </a>
+                    <a href="" class="grid grid-3">
+                        <img src="./images/code-min.png" class="icon">
+                        <div class="title">条码检索</div>
+                        <div class="intro">提供100000+的条码信息随时为您服务</div>
+                        <div class="goto"></div>
+                    </a>
+                    <a href="" class="grid grid-4">
+                        <img src="./images/law.png" class="icon">
+                        <div class="title">法律法规</div>
+                        <div class="intro">提供1000000+馆藏标准随时为您服务，标准资源分为国家标准、行业标准、地方标准、国际国外标…</div>
+                        <div class="goto"></div>
+                    </a>
+                    <a href="" class="grid grid-5">
+                        <img src="./images/expert.png" class="icon">
+                        <div class="title">专家库</div>
+                        <div class="intro">提供1000000+馆藏标准随时为您服务，标准资源分为国家标准、行业标准、地方标准、国际国外标…</div>
+                        <div class="goto"></div>
+                    </a>
+                    <a href="" class="grid grid-6">
+                        <img src="./images/council.png" class="icon">
+                        <div class="title">标准化技术委员会</div>
+                        <div class="intro">提供全球和全国的标准化技术委员会分布，以世界地图和中国地图的方式清晰明了的展示分布信息</div>
+                        <div class="goto"></div>
+                    </a>
+                    <a href="" class="grid grid-7">
+                        <img src="./images/reward.png" class="icon">
+                        <div class="title">标准化成果</div>
+                        <div class="intro">提供1000000+馆藏标准随时为您服务，标准资源分为国家标准、行业标准、地方标准、国际国外标…</div>
+                        <div class="goto"></div>
+                    </a>
+                    <a href="" class="grid grid-8">
+                        <img src="./images/edit.png" class="icon">
+                        <div class="title">标准制修订成果</div>
+                        <div class="intro">提供1000000+馆藏标准随时为您服务，标准资源分为国家标准、行业标准、地方标准、国际国外标…</div>
+                        <div class="goto"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-slide client">
+                <div class="slide-title">
+                    <div class="main">合作伙伴</div>
+                    <div class="sub">Served Clients</div>
+                </div>
+                <div class="client-wall">
+                    <div class="slogan">来自&nbsp;7w+&nbsp;客户的信赖</div>
+                    <div class="button">客户案例</div>
+                </div>
+            </div>
+            <div class="swiper-slide contact">
+                <div class="slide-title">
+                    <div class="main">联系我们</div>
+                    <div class="sub">Contact Us</div>
+                </div>
+                <div class="content">
+                    <div class="info-area">
+                        <div class="map"></div>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <span class="label">地址</span>
+                                <div class="info">address_value</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">电话</span>
+                                <div class="info">phone_value</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">邮箱</span>
+                                <div class="info">mail_value</div>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">公共交通路线</span>
+                                <div class="info">bus_path_value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-area">
+                        <form>
+                            <input type="text" class="input half" placeholder="姓名">
+                            <input type="text" class="input half" placeholder="手机号">
+                            <input type="text" class="input half" placeholder="企业名称">
+                            <input type="text" class="input half" placeholder="单位地址">
+                            <input type="text" class="input" placeholder="需要帮助的内容">
+                            <textarea class="textarea" placeholder="详情"></textarea>
+                            <div class="button">提交</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide index-footer">
+                <div class="column-group">
+                    <div class="nav-column">
+                        <div class="title">标准化在线服务</div>
+                        <a class="link">标准自我声明</a>
+                        <a class="link">标准时效性确认</a>
+                        <a class="link">标准代译</a>
+                        <a class="link">标准制修订奖励申报</a>
+                        <a class="link">市级地方标准申报</a>
+                    </div>
+                    <div class="nav-column">
+                        <div class="title">标准化项目服务</div>
+                        <a class="link">标准化良好行为</a>
+                        <a class="link">服务业标准化</a>
+                        <a class="link">农业标准化</a>
+                        <a class="link">地理标志产品</a>
+                        <a class="link">标准化专题</a>
+                        <a class="link">标准制修订</a>
+                    </div>
+                    <div class="nav-column">
+                        <div class="title">标准化资源</div>
+                        <a class="link">法律法规</a>
+                        <a class="link">专家库</a>
+                        <a class="link">标准化技术委员会</a>
+                        <a class="link">标准化成果</a>
+                        <a class="link">标准制修订成果</a>
+                    </div>
+                    <div class="nav-column">
+                        <div class="title">条码服务</div>
+                        <a class="link">注册</a>
+                        <a class="link">条码印刷</a>
+                        <a class="link">续展</a>
+                        <a class="link">条码质检</a>
+                        <a class="link">条码制作</a>
+                    </div>
+                    <div class="nav-column">
+                        <div class="title">查询服务</div>
+                        <a class="link">标准查询</a>
+                        <a class="link">统一社会信用代码查询</a>
+                        <a class="link">条码查询</a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="link-group">
+                        <div class="label">友情链接：</div>
+                        <a class="link">国家质检总局</a>
+                        <a class="link">国家质检总局</a>
+                        <a class="link">国家质检总局</a>
+                        <a class="link">国家质检总局</a>
+                        <a class="link">国家质检总局</a>
+                        <a class="link">国家质检总局</a>
+                        <a class="link">国家质检总局</a>
+                    </div>
+                    <div class="copyright">© 2017 黄石信息与标准化服务平台 | 鄂ICP备17005291号</div>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</body>
+<script>
+    function search(){
+        $(".search-view").addClass("searching");
+    }
+    function exitSearch(){
+        $(".search-view").removeClass("searching");
+    }
+    function clearCardState(){
+        $(".service .card").removeClass("enter");
+    }
+    function clearGridState(){
+        $(".grid-group .grid").removeClass("enter");
+    }
+    var keynote = new Swiper('.keynote', {
+        direction: 'vertical',
+        slidesPerView: 1,
+        spaceBetween: 0,
+        mousewheel: true,
+        pagination: {
+            //el: '.swiper-pagination',
+            //clickable: true,
+        },
+        
+        on: {
+            slideChangeTransitionStart: function(){
+                if(this.realIndex==0){
+                    $(".top-bar").removeClass("dark blue").addClass("light");
+                    $(".toolbox").removeClass("dark up").addClass("down");
+                    $(".client-wall").removeClass("enter");
+                    clearCardState();
+                    clearGridState();
+                }else if(this.realIndex==3){
+                    $(".top-bar").removeClass("light blue").addClass("dark");
+                    $(".toolbox").removeClass("down").addClass("up dark");
+                    $(".client-wall").addClass("enter");
+                    clearCardState();
+                    clearGridState();
+                }else if(this.realIndex==4){
+                    $(".top-bar").removeClass("light blue").addClass("dark");
+                    $(".toolbox").removeClass("down").addClass("up dark");
+                    $(".client-wall").removeClass("enter");
+                    clearCardState();
+                    clearGridState();
+                }else if(this.realIndex==1){
+                    $(".top-bar").removeClass("light blue").addClass("dark");
+                    $(".toolbox").removeClass("up").addClass("down dark");
+                    $(".service .card-1").addClass("enter");
+                    $(".client-wall").removeClass("enter");
+                    function secondMotion(){
+                        $(".service .card-2").addClass("enter");
+                    }
+                    function thirdMotion(){
+                        $(".service .card-3").addClass("enter");
+                    }
+                    setTimeout(secondMotion, 200);
+                    setTimeout(thirdMotion, 400);
+                    clearGridState();
+                }else if(this.realIndex==2){
+                    $(".top-bar").removeClass("dark").addClass("light blue");
+                    $(".toolbox").removeClass("down dark").addClass("up");
+                    clearCardState();
+                    $(".grid-group .grid-1").addClass("enter");
+                    $(".client-wall").removeClass("enter");
+                    function gridMotion2(){
+                        $(".grid-group .grid-2").addClass("enter");
+                    }
+                    function gridMotion3(){
+                        $(".grid-group .grid-3").addClass("enter");
+                    }
+                    function gridMotion4(){
+                        $(".grid-group .grid-4").addClass("enter");
+                    }
+                    function gridMotion5(){
+                        $(".grid-group .grid-5").addClass("enter");
+                    }
+                    function gridMotion6(){
+                        $(".grid-group .grid-6").addClass("enter");
+                    }
+                    function gridMotion7(){
+                        $(".grid-group .grid-7").addClass("enter");
+                    }
+                    function gridMotion8(){
+                        $(".grid-group .grid-8").addClass("enter");
+                    }
+                    setTimeout(gridMotion2, 100);
+                    setTimeout(gridMotion3, 200);
+                    setTimeout(gridMotion4, 300);
+                    setTimeout(gridMotion5, 400);
+                    setTimeout(gridMotion6, 500);
+                    setTimeout(gridMotion7, 600);
+                    setTimeout(gridMotion8, 700);
+                }else if(this.realIndex==5){
+                    $(".top-bar").removeClass("dark blue").addClass("light");
+                    $(".toolbox").removeClass("down dark").addClass("up");
+                    $(".client-wall").removeClass("enter");
+                    clearCardState();
+                    clearGridState();
+                }
+            }
+        }
+    });
+    var heroBannerSlide = new Swiper('.hero-banner-slide', {
+        spaceBetween: 0,
+        //noSwiping: true,
+        autoplay: {
+            delay: 8000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        loop : true,
+        on: {
+            slideChangeTransitionStart: function(){
+                if(this.realIndex==0){
+                    $(".banner-2 .motion-1").removeClass("enter");
+                    $(".banner-2 .motion-2").removeClass("enter");
+                    $(".banner-2 .motion-3").removeClass("enter");
+
+                    $(".banner-3 .motion-1").removeClass("enter");
+                    $(".banner-3 .motion-2").removeClass("enter");
+                    $(".banner-3 .motion-3").removeClass("enter");
+
+                    $(".banner-1 .motion-1").addClass("enter");
+                    $(".banner-1 .motion-2").addClass("enter");
+                    $(".banner-1 .motion-3").addClass("enter");
+                }else if(this.realIndex==1){
+                    $(".banner-1 .motion-1").removeClass("enter");
+                    $(".banner-1 .motion-2").removeClass("enter");
+                    $(".banner-1 .motion-3").removeClass("enter");
+
+                    $(".banner-3 .motion-1").removeClass("enter");
+                    $(".banner-3 .motion-2").removeClass("enter");
+                    $(".banner-3 .motion-3").removeClass("enter");
+
+                    $(".banner-2 .motion-1").addClass("enter");
+                    $(".banner-2 .motion-2").addClass("enter");
+                    $(".banner-2 .motion-3").addClass("enter");
+                }else if(this.realIndex==2){
+                    $(".banner-1 .motion-1").removeClass("enter");
+                    $(".banner-1 .motion-2").removeClass("enter");
+                    $(".banner-1 .motion-3").removeClass("enter");
+
+                    $(".banner-2 .motion-1").removeClass("enter");
+                    $(".banner-2 .motion-2").removeClass("enter");
+                    $(".banner-2 .motion-3").removeClass("enter");
+
+                    $(".banner-3 .motion-1").addClass("enter");
+                    $(".banner-3 .motion-2").addClass("enter");
+                    $(".banner-3 .motion-3").addClass("enter");
+                }
+            }
+        }
+    });
+    function toTop(){
+        keynote.slideTo(0, 600, false);
+        $(".top-bar").removeClass("dark blue").addClass("light");
+        $(".toolbox").removeClass("dark up").addClass("down");
+        clearCardState();
+        clearGridState();
+    }
+</script>
+
+</html>

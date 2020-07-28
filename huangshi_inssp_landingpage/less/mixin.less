@@ -1,0 +1,26 @@
+.float-clear(){
+    &:after{
+        content: ".";
+        clear: both;
+        display: block;
+        overflow: hidden;
+        font-size: 0;
+        height: 0;
+    }
+}
+.icon(){
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.transition(){
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -o-transition: all .2s;
+}
+.text-ellipsis(){
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
