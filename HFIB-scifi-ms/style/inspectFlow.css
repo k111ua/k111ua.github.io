@@ -1,0 +1,54 @@
+.intro-content .section .section-content .secondary-title {
+  padding-top: 16px;
+  font-size: 12px;
+  color: #56D8FD;
+  line-height: 32px;
+  opacity: .6;
+}
+.intro-content .section .section-content .inspect-flow-chart {
+  padding-right: 10px;
+}
+.intro-content .section .section-content .inspect-flow-chart .img {
+  display: block;
+  margin: 20px auto;
+}
+.intro-content .section .section-content .clear-indent {
+  text-indent: 0;
+}
+.table-area {
+  padding-top: 20px;
+  padding-right: 10px;
+}
+.table-area .table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  position: relative;
+}
+.table-area .table .table-head tr {
+  background: rgba(86, 216, 253, 0.15);
+}
+.table-area .table .table-head tr th {
+  font-size: 14px;
+  border: 1px solid rgba(86, 216, 253, 0.2);
+  color: #56D8FD;
+  text-align: left;
+  padding: 20px 40px;
+  text-align: center;
+}
+.table-area .table .table-head tr .label-th {
+  white-space: nowrap;
+}
+.table-area .table .table-body tr:nth-child(2n) {
+  background: rgba(86, 216, 253, 0.1);
+}
+.table-area .table .table-body tr td {
+  text-align: center;
+  font-size: 14px;
+  padding: 20px 40px;
+  line-height: 24px;
+  border: 1px solid rgba(86, 216, 253, 0.2);
+  color: #56D8FD;
+}
+.table-area .table .table-body tr .label-td {
+  white-space: nowrap;
+}

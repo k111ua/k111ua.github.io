@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./lib/layui/css/layui.css">
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script src="./lib/echarts.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style/main.css" />
+    <script>
+        $(document).ready(function () {
+            $(".nav-title").click(function () {
+                $(".nav-group").removeClass("expand");
+                $(this).parent(".nav-group").toggleClass("expand");
+            });
+            $(".nav-link").click(function () {
+                $(".nav-link").removeClass("current");
+                $(this).addClass("current");
+            });
+        });
+    </script>
+    <title>entry</title>
+</head>
+
+<body>
+    <div class="entry-view">
+        <div class="header-area">
+            <div class="header">
+                <div class="title"><img src="./image/title-3.png"></div>
+                <div class="action-panel">
+                    <div class="link-btn icon light">
+                        <div class="icon">&#xe7ae;</div>用户
+                    </div>
+                    <div class="link-btn icon light">
+                        <div class="icon">&#xe791;</div>退出
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-nav-area">
+            <div class="main-nav">
+                <a class="nav-item active">首页</a>
+                <a class="nav-item">工作台</a>
+                <a class="nav-item">备品备件</a>
+                <a class="nav-item">送检管理</a>
+            </div>
+        </div>
+        <div style="height: 20px;"></div>
+        <div class="content">
+            <div class="warehouse-info panel">
+                <div class="title">湖南计量中心五线一库中心库房</div>
+                <div class="row">
+                    <img src="./image/sample.png" class="thumbnail">
+                    <table class="info-list">
+                        <tr>
+                            <td class="info">当前温度：</td>
+                            <td class="value">28 ℃</td>
+                        </tr>
+                        <tr>
+                            <td class="info">湿度：</td>
+                            <td class="value">28 ℃</td>
+                        </tr>
+                        <tr>
+                            <td class="info">压强：</td>
+                            <td class="value">28 ℃</td>
+                        </tr>
+                        <tr>
+                            <td class="info">占地面积：</td>
+                            <td class="value">28 ℃</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="workplan panel">
+                <div class="title">我的工作计划<div class="more">查看更多</div>
+                </div>
+                <table class="plan-list">
+                    <tr>
+                        <td class="index">01</td>
+                        <td class="name">辊筒线保养</td>
+                        <td class="status undone">未完成</td>
+                        <td class="action"><a href="">执行</a></td>
+                    </tr>
+                    <tr>
+                        <td class="index">01</td>
+                        <td class="name">辊筒线保养</td>
+                        <td class="status done">已完成</td>
+                        <td class="action"><a href="">执行</a></td>
+                    </tr>
+                    <tr>
+                        <td class="index">01</td>
+                        <td class="name">辊筒线保养</td>
+                        <td class="status undone">未完成</td>
+                        <td class="action"><a href="">执行</a></td>
+                    </tr>
+                    <tr>
+                        <td class="index">01</td>
+                        <td class="name">辊筒线保养</td>
+                        <td class="status undone">未完成</td>
+                        <td class="action"><a href="">执行</a></td>
+                    </tr>
+                    <tr>
+                        <td class="index">01</td>
+                        <td class="name">辊筒线保养</td>
+                        <td class="status undone">未完成</td>
+                        <td class="action"><a href="">执行</a></td>
+                    </tr>
+                    <tr>
+                        <td class="index">01</td>
+                        <td class="name">辊筒线保养</td>
+                        <td class="status undone">未完成</td>
+                        <td class="action"><a href="">执行</a></td>
+                    </tr>
+                    <tr>
+                        <td class="index">01</td>
+                        <td class="name">辊筒线保养</td>
+                        <td class="status undone">未完成</td>
+                        <td class="action"><a href="">执行</a></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="stat-card-group">
+                <div class="stat-card">
+                    <div class="label">历史发现故障总计</div>
+                    <div class="value">233</div>
+                    <div class="icon">&#xe7ae;</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">历史发现故障总计</div>
+                    <div class="value">233</div>
+                    <div class="icon">&#xe7ae;</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">历史发现故障总计</div>
+                    <div class="value">233</div>
+                    <div class="icon">&#xe7ae;</div>
+                </div>
+                <div class="stat-card">
+                    <div class="label">历史发现故障总计</div>
+                    <div class="value">233</div>
+                    <div class="icon">&#xe7ae;</div>
+                </div>
+            </div>
+            <div class="error-list layui-tab">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">全部故障(100)</li>
+                    <li>待解决(10)</li>
+                    <li>已解决(10)</li>
+                    <li>问题预警(10)</li>
+                    <div class="more">查看更多</div>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <div class="error-item">
+                            <div class="row">
+                                <div class="tag-icon">&#xe6f5;</div>
+                                <div class="title">B0001号机械臂无法启动</div>
+                                <div class="status todo">待解决</div>
+                                <div class="link-btn icon">
+                                    <div class="icon">&#xe7d6;</div>详情
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="label">发现时间：</div>
+                                <div class="info">present</div>
+                                <div class="label">发现人：</div>
+                                <div class="info">user</div>
+                                <div class="label">处理人：</div>
+                                <div class="info">admin</div>
+                            </div>
+                        </div>
+                        <div class="error-item">
+                            <div class="row">
+                                <div class="tag-icon">&#xe6f5;</div>
+                                <div class="title">B0001号机械臂无法启动</div>
+                                <div class="status done">已解决</div>
+                                <div class="link-btn icon">
+                                    <div class="icon">&#xe7d6;</div>详情
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="label">发现时间：</div>
+                                <div class="info">present</div>
+                                <div class="label">发现人：</div>
+                                <div class="info">user</div>
+                                <div class="label">处理人：</div>
+                                <div class="info">admin</div>
+                            </div>
+                        </div>
+                        <div class="error-item">
+                            <div class="row">
+                                <div class="tag-icon">&#xe6f5;</div>
+                                <div class="title">B0001号机械臂无法启动</div>
+                                <div class="status alert">问题预警</div>
+                                <div class="link-btn icon">
+                                    <div class="icon">&#xe7d6;</div>详情
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="label">发现时间：</div>
+                                <div class="info">present</div>
+                                <div class="label">发现人：</div>
+                                <div class="info">user</div>
+                                <div class="label">处理人：</div>
+                                <div class="info">admin</div>
+                            </div>
+                        </div>
+                        <div class="error-item">
+                            <div class="row">
+                                <div class="tag-icon">&#xe6f5;</div>
+                                <div class="title">B0001号机械臂无法启动</div>
+                                <div class="status todo">待解决</div>
+                                <div class="link-btn icon">
+                                    <div class="icon">&#xe7d6;</div>详情
+                                </div>
+                            </div>
+                            <div class="text">
+                                <div class="label">发现时间：</div>
+                                <div class="info">present</div>
+                                <div class="label">发现人：</div>
+                                <div class="info">user</div>
+                                <div class="label">处理人：</div>
+                                <div class="info">admin</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-tab-item">内容2</div>
+                    <div class="layui-tab-item">内容3</div>
+                    <div class="layui-tab-item">内容4</div>
+                </div>
+            </div>
+            <div class="link-card-group">
+                <div class="bare-title">快捷业务处理</div>
+                <div class="link-card">
+                    <div class="icon">&#xe7e8;</div>
+                    <div class="link-title">故障处理</div>
+                </div>
+                <div class="link-card">
+                    <div class="icon">&#xe7e8;</div>
+                    <div class="link-title">故障处理</div>
+                </div>
+                <div class="link-card">
+                    <div class="icon">&#xe7e8;</div>
+                    <div class="link-title">故障处理</div>
+                </div>
+                <div class="link-card">
+                    <div class="icon">&#xe7e8;</div>
+                    <div class="link-title">故障处理</div>
+                </div>
+                <div class="link-card">
+                    <div class="icon">&#xe7e8;</div>
+                    <div class="link-title">故障处理</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-panel">
+                    <div class="bare-title">设备台账<div class="more">查看更多</div>
+                    </div>
+                    <table class="list">
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status normal">正常运行</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status error">故障</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status normal">正常运行</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status normal">正常运行</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status normal">正常运行</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status normal">正常运行</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="table-panel">
+                    <div class="bare-title">故障知识库</div>
+                    <table class="list">
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status">正常运行</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status">正常运行</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status">正常运行</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status">正常运行</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status">正常运行</td>
+                        </tr>
+                        <tr>
+                            <td class="index">01</td>
+                            <td class="code">JXB2018103000001</td>
+                            <td class="info">plc设备A段</td>
+                            <td class="status">正常运行</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="chart-panel">
+                    <div class="bare-title">设备分类故障占比</div>
+                    <div class="chart">
+                        <div class="chart-area" id="round" style="width: 400px;height: 320px;"></div>
+                        <div class="halo-legend">
+                            <div class="legend-item">
+                                <div class="label">A类</div>
+                                <div class="value">37%</div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="label">B类</div>
+                                <div class="value">42%</div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="label">C类</div>
+                                <div class="value">31%</div>
+                            </div>
+                        </div>
+                        <div class="year-select"><form class="layui-form">
+                                <table class="k1t-form">
+                                    <tr>
+                                        <td class="info-td" style="padding: 0;border: none;">
+                                            <div class="dropdown">
+                                                <select>
+                                                    <option>2018</option>
+                                                    <option>2019</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form></div>
+                    </div>
+                </div>
+                <div class="chart-panel">
+                    <div class="bare-title">故障问题发现趋势</div>
+                    <div class="chart">
+                        <div class="chart-area" id="line" style="width: 668px;height: 320px;"></div>
+                        <div class="year-select"><form class="layui-form">
+                                <table class="k1t-form">
+                                    <tr>
+                                        <td class="info-td" style="padding: 0;border: none;">
+                                            <div class="dropdown">
+                                                <select>
+                                                    <option>2018</option>
+                                                    <option>2019</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">© 2009-2077 susing.com 版权所有 ICP证：鄂A-20190101 鄂公网安备 11000000001号</div>
+    </div>
+</body>
+<script>
+    layui.use(['form', 'layedit', 'laypage', 'laydate', 'element'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            layedit = layui.layedit,
+            laydate = layui.laydate,
+            laypage = layui.laypage,
+            $ = layui.jquery,
+            element = layui.element;
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+        laydate.render({
+            elem: '#date2'
+        });
+        laypage.render({
+            elem: 'pagination',
+            count: 70,
+            jump: function (obj) {
+                console.log(obj)
+            }
+        });
+    });
+</script>
+<script src="./lib/AIOPM_chart.js"></script>
+</html>

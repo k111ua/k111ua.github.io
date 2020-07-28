@@ -1,0 +1,208 @@
+@formFontSize:14px;
+.k1t-form{ 
+    width: 100%;
+    tr{
+        font-size: 0;
+        .label-td{
+            border-bottom: 1px solid #eee;
+            border-right: 1px solid #eee;
+            text-align: right;
+            color: #666;
+            padding: @tdPadding 0;
+            line-height: @tdHeight;
+            position: relative;
+            vertical-align: top;
+            .label{
+                //width: 120px;
+                font-size: @formFontSize;
+                &:after{
+                    content:'：';
+                }
+                &.required{
+                    &:before{
+                        content:'*';
+                        color: @alert;
+                        font-family: SimSun,sans-serif;
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+        .info-td{
+            border-bottom: 1px solid #eee;
+            position: relative;
+            vertical-align: top;
+            padding: @tdPadding 0;
+            padding-left: 8px;
+            .float-clear();
+            .checkbox-group{
+                float: left;
+            }
+            .radio-group{
+                float: left;
+            }
+            .hint{
+                .text-ellipsis();
+                font-size: @formFontSize;
+                float: left;
+                clear: right;
+                color: @alert;
+                line-height: @tdHeight;
+                margin-left: @tdPadding;
+                &:before{
+                    content:'注：';
+                }
+            }
+            .range-label{
+                float: left;
+                width: 32px;
+                text-align: center;
+                color: #999;
+                line-height: @tdHeight;
+                font-size: @formFontSize;
+                &:after{
+                    content: "~";
+                }
+            }
+            .input{
+                .input();
+                float: left;
+                font-size: @formFontSize;
+                &.range{
+                    width: 170px;
+                }
+            }
+            .dropdown{
+                width: 400px;
+                float: left;
+                font-size: @formFontSize;
+                &.range{
+                    width: 184px;
+                }
+            }
+            .datepicker{
+                width: 400px;
+                float: left;
+                font-size: @formFontSize;
+                position: relative;
+                &.range{
+                    width: 184px;
+                }
+                &:before{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: '';
+                    width: @tdHeight;
+                    height: @tdHeight;
+                    background:url(../image/date.png) center center no-repeat;
+                    pointer-events: none;
+                }
+            }
+            .textarea{
+                .textarea();
+                float: left;
+                font-size: @formFontSize;
+            }
+        }
+        .filter-label-td{
+            text-align: right;
+            color: #666;
+            width: 70px;
+            padding: 0;
+            line-height: @tdHeight;
+            position: relative;
+            vertical-align: top;
+            .label{
+                //width: 120px;
+                font-size: @formFontSize;
+                &:after{
+                    content:'：';
+                }
+            }
+        }
+        .filter-info-td{
+            position: relative;
+            vertical-align: top;
+            padding: 0;
+            .float-clear();
+            .checkbox-group{
+                float: left;
+            }
+            .radio-group{
+                float: left;
+            }
+            .range-label{
+                float: left;
+                width: 32px;
+                text-align: center;
+                color: #999;
+                line-height: @tdHeight;
+                font-size: @formFontSize;
+                &:after{
+                    content: "~";
+                }
+            }
+            .input{
+                .input();
+                float: left;
+                font-size: @formFontSize;
+                &.range{
+                    width: 170px;
+                }
+            }
+            .dropdown{
+                width: 400px;
+                float: left;
+                font-size: @formFontSize;
+                &.range{
+                    width: 184px;
+                }
+            }
+            .datepicker{
+                width: 400px;
+                float: left;
+                font-size: @formFontSize;
+                position: relative;
+                &.range{
+                    width: 184px;
+                }
+                &:before{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    content: '';
+                    width: @tdHeight;
+                    height: @tdHeight;
+                    background:url(../image/date.png) center center no-repeat;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+.filter{
+    .k1t-form{
+        border: 1px solid #ddd;
+        .label-td{
+            border-bottom: 1px dashed #eee;
+            border-right: none;
+            width: 10%;
+        }
+        .info-td{
+            width: 40%;
+            border-bottom: 1px dashed #eee;
+            &.max{
+                width: 90%;
+            }
+        }
+        .filter-submit-td{
+            padding: 12px;
+            .action-bar{
+                justify-content: center;
+            }
+        }
+    }
+}
+

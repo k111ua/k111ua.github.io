@@ -1,0 +1,124 @@
+.upload-panel{
+    .float-clear();
+    max-width: 538px;
+    .image-tile {
+        width: 124px;
+        height: 124px;
+        overflow: hidden;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: @borderRadius;
+        float: left;
+        overflow: hidden;
+        margin-right: 14px;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 14px;
+        &:nth-child(3n){
+            margin-right: 0;
+        }
+        .image{
+            width: 100%;
+            height: 100%;
+        }
+        .mask{
+            opacity: 0;
+            transition: opacity .2s;
+            position: absolute;
+            display: flex;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,.2);
+            .icon-btn{
+                border-radius: @borderRadius;
+                background: rgba(255,255,255,.88);
+                transition: background .2s;
+                &:hover{
+                    background: rgba(255,255,255,1);
+                }
+            }
+        }
+        &:hover{
+            .mask{
+                opacity: 1;
+            }
+        }
+    }
+
+    .upload-tile {
+        width: 124px;
+        height: 124px;
+        cursor: pointer;
+        box-sizing: border-box;
+        border-radius: @borderRadius;
+        border: 1px dashed #aaa;
+        float: left;
+        background-image: url('@{imageRoot}/image/add.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        margin-bottom: 14px;
+        background-color: #fafafa;
+        transition: all .2s;
+        
+        &:hover{
+            background-color: @secondaryHover;
+            border-color: @primary;
+        }
+    }
+    .file-list{
+        margin-top: 12px;
+        width: 400px;
+        .file-item{
+            display: flex;
+            line-height: 32px;
+            justify-content: space-between;
+            border: 1px solid #fff;
+            border-radius: @borderRadius;
+            cursor: pointer;
+            .file-name{
+                font-size: 14px;
+                color: #888;
+                width: 160px;
+                padding-left: 18px;
+                position: relative;
+                transition: color .2s;
+                .text-ellipsis();
+                .icon{
+                    .icon();
+                    width: 16px;
+                    height: 16px;
+                    line-height: 16px;
+                    text-align: center;
+                    color: #aaa;
+                    position: absolute;
+                    top: 8px;
+                    left: 0;
+                    transition: color .2s;
+                }
+                .file{
+                    margin-right: 4px;
+                }
+            }
+            .action-bar{
+                padding: 4px 0;
+                opacity: 0;
+                transition: opacity .2s;
+            }
+            &:hover{
+                .file-name{
+                    color: @primary;
+                    .icon{
+                        color: @primary;
+                    }
+                }
+                .action-bar{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

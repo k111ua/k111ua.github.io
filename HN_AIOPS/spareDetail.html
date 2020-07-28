@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./lib/layui/layui.all.js" charset="utf-8"></script>
+    <script src="./lib/jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./lib/layui/css/layui.css">
+    <!--此处必须在最后引用k1t-->
+    <link rel="stylesheet" type="text/css" href="./style/main.css" />
+    <title>siderNav</title>
+    <script>
+        $(document).ready(function () {
+            $(".nav-title").click(function () {
+                $(".nav-group").removeClass("expand");
+                $(this).parent(".nav-group").addClass("expand");
+                $(this).parent(".nav-group").children(".nav-list").children().addClass("expand");
+            });
+            $(".nav-link").click(function () {
+                $(".nav-link").removeClass("current");
+                $(this).addClass("current");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="view" style="overflow-y: auto;position: absolute;top: 0;left:0;right:0;bottom: 0;">
+        <div class="content" style="padding: 12px 16px 16px 16px;">
+            <div class="device-info">
+                <div class="title">1号误差检测台（B类）</div>
+                <div class="tag normal">设备监控正常</div>
+                <!--<div class="tag alert">设备监控异常</div>-->
+            </div>
+                <div class="layui-tab">
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">采集终端检测流水线</li>
+                            <li>采集终端检测流水线</li>
+                            <li>采集终端检测流水线</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <div class="table-area">
+                                    <table class="table">
+                                        <thead class="table-head">
+                                            <tr>
+                                                <th class="checkbox-grid"><input type="checkbox"></th>
+                                                <th class="index-grid">#</th>
+                                                <th>1</th>
+                                                <th>1</th>
+                                                <th>1</th>
+                                                <th>操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-body">
+                                            <tr>
+                                                <td class="checkbox-grid"><input type="checkbox"></td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>
+                                                    <input type="text" class="input">
+                                                </td>
+                                                <td>
+                                                    <div class="action-bar">
+                                                        <div class="link-btn icon">
+                                                            <div class="icon">&#xe7e1;</div>编辑
+                                                        </div>
+                                                        <div class="link-btn icon">
+                                                            <div class="icon">&#xe7d6;</div>详情
+                                                        </div>
+                                                        <div class="link-btn icon alert">
+                                                            <div class="icon">&#xe7c3;</div>删除
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="checkbox-grid"><input type="checkbox"></td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>
+                                                    <input type="text" class="input">
+                                                </td>
+                                                <td>
+                                                    <div class="action-bar">
+                                                        <div class="link-btn icon">
+                                                            <div class="icon">&#xe7e1;</div>编辑
+                                                        </div>
+                                                        <div class="link-btn icon">
+                                                            <div class="icon">&#xe7d6;</div>详情
+                                                        </div>
+                                                        <div class="link-btn icon alert">
+                                                            <div class="icon">&#xe7c3;</div>删除
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="checkbox-grid"><input type="checkbox"></td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>
+                                                    <input type="text" class="input">
+                                                </td>
+                                                <td>
+                                                    <div class="action-bar">
+                                                        <div class="link-btn icon">
+                                                            <div class="icon">&#xe7e1;</div>编辑
+                                                        </div>
+                                                        <div class="link-btn icon">
+                                                            <div class="icon">&#xe7d6;</div>详情
+                                                        </div>
+                                                        <div class="link-btn icon alert">
+                                                            <div class="icon">&#xe7c3;</div>删除
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="checkbox-grid"><input type="checkbox"></td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>2</td>
+                                                <td>
+                                                    <input type="text" class="input">
+                                                </td>
+                                                <td>
+                                                    <div class="action-bar">
+                                                        <div class="link-btn icon">
+                                                            <div class="icon">&#xe7e1;</div>编辑
+                                                        </div>
+                                                        <div class="link-btn icon">
+                                                            <div class="icon">&#xe7d6;</div>详情
+                                                        </div>
+                                                        <div class="link-btn icon alert">
+                                                            <div class="icon">&#xe7c3;</div>删除
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item">内容2</div>
+                            <div class="layui-tab-item">内容3</div>
+                            <div class="layui-tab-item">内容4</div>
+                        </div>
+                    </div>
+                    <div style="height: 16px;"></div>
+                    <table class="info-table">
+                        <tr>
+                            <td class="label-td">标签</td>
+                            <td class="info-td">信息</td>
+                            <td class="label-td">标签</td>
+                            <td class="info-td">信息</td>
+                        </tr>
+                        <tr>
+                                <td class="label-td">标签</td>
+                            <td class="info-td">信息</td><td class="label-td">标签</td>
+                            <td class="info-td">信息</td>
+                            </tr>
+                            <tr>
+                                    <td class="label-td">标签</td>
+                            <td class="info-td">信息</td>
+                                </tr>
+                    </table>
+                    <div class="table-area">
+                            <table class="table">
+                                <thead class="table-head">
+                                    <tr>
+                                        <th class="checkbox-grid"><input type="checkbox"></th>
+                                        <th class="index-grid">#</th>
+                                        <th>1</th>
+                                        <th>1</th>
+                                        <th>1</th>
+                                        <th>操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body">
+                                    <tr>
+                                        <td class="checkbox-grid"><input type="checkbox"></td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>
+                                            <input type="text" class="input">
+                                        </td>
+                                        <td>
+                                            <div class="action-bar">
+                                                <div class="link-btn icon">
+                                                    <div class="icon">&#xe7e1;</div>编辑
+                                                </div>
+                                                <div class="link-btn icon">
+                                                    <div class="icon">&#xe7d6;</div>详情
+                                                </div>
+                                                <div class="link-btn icon alert">
+                                                    <div class="icon">&#xe7c3;</div>删除
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox-grid"><input type="checkbox"></td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>
+                                            <input type="text" class="input">
+                                        </td>
+                                        <td>
+                                            <div class="action-bar">
+                                                <div class="link-btn icon">
+                                                    <div class="icon">&#xe7e1;</div>编辑
+                                                </div>
+                                                <div class="link-btn icon">
+                                                    <div class="icon">&#xe7d6;</div>详情
+                                                </div>
+                                                <div class="link-btn icon alert">
+                                                    <div class="icon">&#xe7c3;</div>删除
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox-grid"><input type="checkbox"></td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>
+                                            <input type="text" class="input">
+                                        </td>
+                                        <td>
+                                            <div class="action-bar">
+                                                <div class="link-btn icon">
+                                                    <div class="icon">&#xe7e1;</div>编辑
+                                                </div>
+                                                <div class="link-btn icon">
+                                                    <div class="icon">&#xe7d6;</div>详情
+                                                </div>
+                                                <div class="link-btn icon alert">
+                                                    <div class="icon">&#xe7c3;</div>删除
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="checkbox-grid"><input type="checkbox"></td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                        <td>
+                                            <input type="text" class="input">
+                                        </td>
+                                        <td>
+                                            <div class="action-bar">
+                                                <div class="link-btn icon">
+                                                    <div class="icon">&#xe7e1;</div>编辑
+                                                </div>
+                                                <div class="link-btn icon">
+                                                    <div class="icon">&#xe7d6;</div>详情
+                                                </div>
+                                                <div class="link-btn icon alert">
+                                                    <div class="icon">&#xe7c3;</div>删除
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+        </div>
+    </div>
+</body>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            layedit = layui.layedit,
+            laydate = layui.laydate;
+        laydate.render({
+            elem: '#date'
+        });
+        laydate.render({
+            elem: '#date1'
+        });
+        form.render();
+    });
+</script>
+
+</html>

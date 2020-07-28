@@ -1,0 +1,187 @@
+.sider-nav {
+    background: #fff;
+    width: 256px;
+    box-sizing: border-box;
+    user-select: none;
+    border-right: 1px solid #ddd;
+    padding: 8px 0;
+    .nav-group {
+        .nav-list {
+            overflow: hidden;
+            display: none;
+            padding-bottom: 8px;
+        }
+        &.expand {
+            //border-left: 2px solid @primary;
+            background: @primaryGray;
+            .nav-list {
+                display: block;
+            }
+
+            .nav-title {
+                color: #333;
+                .icon{
+                    color: #666;
+                }
+
+                &:before {
+                    transform: rotateZ(0deg);
+                    opacity: 1;
+                }
+                pointer-events: none;
+            }
+        }
+    }
+
+    .nav-title {
+        cursor: pointer;
+        color: #666;
+        padding-left: 40px;
+        position: relative;
+        line-height: 36px;
+        font-size: 14px;
+        margin-top: 8px;
+        margin-left: 16px;
+        margin-right: 16px;
+        .icon {
+            .icon();
+            top: 8px;
+            left: 8px;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 20px;
+            color: #888;
+            transition: color .2s;
+        }
+
+        &:before {
+            background-image: url('@{imageRoot}/images/dropdown.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 20px;
+            height: 20px;
+            content:'';
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            opacity: .7;
+            transition: transform .2s;
+            transform: rotateZ(-90deg);
+        }
+
+        &.nav-link {
+            line-height: 36px;
+            margin-top: 8px;
+            &:before {
+                display: none;
+            }
+            &.current{
+                .icon{
+                    color: @primary;
+                }
+            }
+        }
+        &:hover{
+            background: @lightGray;
+            color: #555;
+            .icon{
+                color: #808080;
+            }
+        }
+    }
+
+    .nav-link {
+        cursor: pointer;
+        display: block;
+        color: #777;
+        line-height: 36px;
+        padding-left: 40px;
+        //background: #fff;
+        transition: all .2s;
+        font-size: 14px;
+
+        &:hover {
+            background: @lightGray;
+            color: #555;
+        }
+
+        &.current {
+            background: @secondaryHover;
+            color: @primary;
+            //border-right: 3px solid @primary;
+            .icon {
+                color: #fff;
+            }
+        }
+    }
+    &.dark{
+        border-right: none;
+        background: @dark;
+        .nav-group {
+            &.expand {
+                background: rgba(255,255,255,.04);
+                .nav-title {
+                    color: #fff;
+                    opacity: 1;
+                    .icon{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    
+        .nav-title {
+            color: #fff;
+            opacity: 1;
+            .icon {
+                color: #fff;
+            }
+    
+            &:before {
+                background-image: url('@{imageRoot}/images/dropdown-light.png');
+            }
+    
+            &.nav-link {
+                &.current{
+                    background: @primary;
+                    color: #fff;
+                    opacity: 1;
+                    .icon{
+                        color: #fff;
+                    }
+                }
+            }
+            &:hover{
+                background: rgba(0,0,0,.15);
+                color: #fff;
+                .icon{
+                    color: #fff;
+                }
+            }
+        }
+    
+        .nav-link {
+            color: #fff;
+            opacity: 1;
+            &:hover {
+                background: rgba(0,0,0,.15);
+                color: #fff;
+                opacity: .7;
+            }
+    
+            &.current {
+                opacity: 1;
+                background: @primary;
+                color: #fff;
+                //border-right: 3px solid @primary;
+                .icon {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}

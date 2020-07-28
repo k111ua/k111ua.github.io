@@ -1,0 +1,6 @@
+{
+    "less.compile": {
+       // "main": ["${workspaceRoot}/less/main.less"],
+       // "out": "${workspaceRoot}/style/"
+    }       
+}
